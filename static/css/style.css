@@ -1,0 +1,75 @@
+header{
+    display: flex;
+    justify-content: center;
+    background-color: #353A40;
+}
+
+/* -------------header------------- */
+
+nav{
+    width: 90%;
+}
+
+.nav-items a{
+    color:grey;
+}
+
+.nav-items a:hover{
+    color: white;
+}
+
+nav a{
+    color: white;
+}
+
+nav a:hover{
+    color: white;
+}
+
+
+/* -------------first section------------- */
+
+.first-section{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/img/ba1.jpg);
+    background-position: center center;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+   
+}
+
+.fs-div{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    justify-content: center;
+    color: white;
+    margin-right: 100px;
+}
+
+
+/* -------------third section------------- */
+
+.ts-card{
+    background-color:#353A40;
+    color: white
+}
+
+
+/* -------------fourth section------------- */
+
+.btn-formulario{
+    background-color: #96C93E;
+}
+
+
+/* -------------footer------------- */
+
+.footer{
+    background-color: #1D4358;
+    color: white;
+    padding-top: 20px;
+    text-align: center;
+}
