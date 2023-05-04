@@ -4,26 +4,11 @@ header{
     background-color: #353A40;
 }
 
+
 /* -------------header------------- */
 
 nav{
     width: 90%;
-}
-
-.nav-items a{
-    color:grey;
-}
-
-.nav-items a:hover{
-    color: white;
-}
-
-nav a{
-    color: white;
-}
-
-nav a:hover{
-    color: white;
 }
 
 
@@ -35,7 +20,9 @@ nav a:hover{
     text-align: right;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 80vh;
+    color: white;
    
 }
 
