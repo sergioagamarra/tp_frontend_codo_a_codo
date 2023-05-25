@@ -1,8 +1,13 @@
+html, body {
+    height: 100%;
+}
+
 header{
     display: flex;
     justify-content: center;
     background-color: #353A40;
 }
+
 
 
 /* -------------header------------- */
@@ -58,4 +63,9 @@ nav{
     color: white;
     padding-top: 20px;
     text-align: center;
+}
+
+/* ---------main_tickets------------ */
+.main_tickets{
+    min-height: 75.6%;
 }

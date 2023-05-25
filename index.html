@@ -18,13 +18,14 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand logo" href="#">
+          <a class="navbar-brand logo" href="index.html">
             <img
               src="static/img/codoacodo.png"
               alt=""
               width="100"
               height="auto"
               class="d-inline-block align-text-center"
+              href="index.html"
             />
             Conf Bs As
           </a>
@@ -56,7 +57,9 @@
                 <a class="nav-link" href="#">Conviértete en orador</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-success" href="#">Comprar tickets</a>
+                <a class="nav-link text-success" href="tickets.html"
+                  >Comprar tickets</a
+                >
               </li>
             </ul>
           </div>
@@ -103,50 +106,65 @@
           <p class="m-0">CONOCE A LOS</p>
           <h1 class="m-0">ORADORES</h1>
         </div>
-        <div class="container d-flex flex-wrap justify-content-evenly">
-          <div class="card mb-4" style="width: 18rem">
-            <img src="static/img/steve.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <span class="badge bg-warning text-dark">JavaScript</span>
-              <span class="badge bg-info text-dark">React</span>
-              <h5 class="card-title">Steve Jobs</h5>
-              <p class="card-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
-                aperiam omnis vero veritatis amet laudantium esse rerum
-                voluptate animi eveniet excepturi iusto perspiciatis similique
-                magnam aliquid, tempore quia? Eveniet, laborum.
-              </p>
+        <div class="container">
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-center"
+          >
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img
+                  src="static/img/steve.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <span class="badge bg-warning text-dark">JavaScript</span>
+                  <span class="badge bg-info text-dark">React</span>
+                  <h5 class="card-title">Steve Jobs</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Quasi aperiam omnis vero veritatis amet laudantium esse
+                    rerum voluptate animi eveniet excepturi iusto perspiciatis
+                    similique magnam aliquid, tempore quia? Eveniet, laborum.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card mb-4" style="width: 18rem">
-            <img src="static/img/bill.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <span class="badge bg-warning text-dark">JavaScript</span>
-              <span class="badge bg-info text-dark">React</span>
-              <h5 class="card-title">Bill Gates</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-                officiis ipsum mollitia, eius debitis temporibus atque quis?
-                Porro quasi, aspernatur dolorem expedita illum quis dolores,
-                quibusdam ratione, ea accusamus veritatis.
-              </p>
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="static/img/bill.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <span class="badge bg-warning text-dark">JavaScript</span>
+                  <span class="badge bg-info text-dark">React</span>
+                  <h5 class="card-title">Bill Gates</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+                    officiis ipsum mollitia, eius debitis temporibus atque quis?
+                    Porro quasi, aspernatur dolorem expedita illum quis dolores,
+                    quibusdam ratione, ea accusamus veritatis.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card mb-4" style="width: 18rem">
-            <img src="static/img/ada.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <span class="badge bg-secondary">Negocios</span>
-              <span class="badge bg-danger">Startups</span>
-              <h5 class="card-title">Ada Lovelace</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                temporibus beatae totam nulla praesentium. Mollitia facere modi
-                distinctio. Dolor sapiente, odit rerum ipsam exercitationem
-                reiciendis? Deserunt totam enim aliquam quo?
-              </p>
+            <div class="col mb-4">
+              <div class="card h-100">
+                <img src="static/img/ada.jpeg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <span class="badge bg-secondary">Negocios</span>
+                  <span class="badge bg-danger">Startups</span>
+                  <h5 class="card-title">Ada Lovelace</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odit temporibus beatae totam nulla praesentium. Mollitia
+                    facere modi distinctio. Dolor sapiente, odit rerum ipsam
+                    exercitationem reiciendis? Deserunt totam enim aliquam quo?
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </section>
 
       <section class="third-section my-5">
@@ -236,13 +254,27 @@
         <div
           class="row mx-auto gap-3 justify-content-center align-items-center"
         >
-          <div class="col-md-auto mb-3 mb-md-0"><p>Preguntas frecuentes</p></div>
-          <div class="col-md-auto mb-3 mb-md-0"><p>Contáctanos</p></div>
-          <div class="col-md-auto mb-3 mb-md-0"><p>Prensa</p></div>
-          <div class="col-md-auto mb-3 mb-md-0"><p>Conferencias</p></div>
-          <div class="col-md-auto mb-3 mb-md-0"><p>Términos y condiciones</p></div>
-          <div class="col-md-auto mb-3 mb-md-0"><p>Privacidad</p></div>
-          <div class="col-md-auto mb-3 mb-md-0"><p>Estudiantes</p></div>
+          <div class="col-md-auto mb-1 mb-md-0">
+            <p>Preguntas frecuentes</p>
+          </div>
+          <div class="col-md-auto mb-1 mb-md-0">
+            <p>Contáctanos</p>
+          </div>
+          <div class="col-md-auto mb-1 mb-md-0">
+            <p>Prensa</p>
+          </div>
+          <div class="col-md-auto mb-1 mb-md-0">
+            <p>Conferencias</p>
+          </div>
+          <div class="col-md-auto mb-1 mb-md-0">
+            <p>Términos y condiciones</p>
+          </div>
+          <div class="col-md-auto mb-1 mb-md-0">
+            <p>Privacidad</p>
+          </div>
+          <div class="col-md-auto mb-1 mb-md-0">
+            <p>Estudiantes</p>
+          </div>
         </div>
       </div>
     </footer>
