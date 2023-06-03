@@ -1,71 +1,104 @@
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
-header{
-    display: flex;
-    justify-content: center;
-    background-color: #353A40;
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #353a40;
 }
-
-
 
 /* -------------header------------- */
 
-nav{
-    width: 90%;
+nav {
+  width: 90%;
 }
-
 
 /* -------------first section------------- */
 
-.first-section{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/ba1.jpg);
-    background-position: center center;
-    color: white;
-    text-align: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+.first-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/ba1.jpg);
+  background-position: center center;
+  color: white;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 
-.fs-div{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items:end;
-    justify-content: center;
-    color: white;
-    margin-right: 100px;
+.fs-div {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  color: white;
+  margin-right: 100px;
 }
-
 
 /* -------------third section------------- */
 
-.ts-card{
-    background-color:#353A40;
-    color: white
+.ts-card {
+  background-color: #353a40;
+  color: white;
 }
-
 
 /* -------------fourth section------------- */
 
-.btn-formulario{
-    background-color: #96C93E;
+.btn-formulario {
+  background-color: #96c93e;
 }
-
 
 /* -------------footer------------- */
 
-.footer{
-    background-color: #1D4358;
-    color: white;
-    padding-top: 20px;
-    text-align: center;
+.footer {
+  background-color: #1d4358;
+  color: white;
+  padding-top: 20px;
+  text-align: center;
 }
 
 /* ---------main_tickets------------ */
-.main_tickets{
-    min-height: 75.6vh;
+.main_tickets {
+  min-height: 75.6vh;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.card-estudiante {
+  background-color: #0d6efd;
+  color: white;
+  cursor:default;
+  animation: cardAnimation 1s infinite; 
+}
+
+.card-trainee {
+  background-color: #198754;
+  color: white;
+  cursor:default;
+  animation: cardAnimation 1s infinite; 
+}
+
+.card-junior {
+  background-color: #ffc107;
+  color: white;
+  cursor:default;
+  animation: cardAnimation 1s infinite;  
+}
+
+@keyframes cardAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.01);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
