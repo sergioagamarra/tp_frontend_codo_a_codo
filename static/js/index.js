@@ -57,8 +57,8 @@ elements.formBtnDelete.addEventListener("click", cleanForm);
 elements.modalBtn.addEventListener("click", () => {
     let modal = bootstrap.Modal.getInstance(elements.modal);
     modal.hide();
-    showAlert("Se ha completado la compra de tickects con éxito.", 2);
-    cleanForm()
+    showAlert("La compra de tickets se ha completado exitosamente.", 2);
+    cleanForm();
 });
 
 function showAlert(message, type) {
@@ -68,16 +68,16 @@ function showAlert(message, type) {
     let alert;
 
     switch (type) {
-      case 1:
-        icon = `<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>`;
-        alert = "danger";
-        break;
-      case 2:
-        icon = `<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>`;
-        alert = "success";
-        break;
-      default:
-        break;
+        case 1:
+            icon = `<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>`;
+            alert = "danger";
+            break;
+        case 2:
+            icon = `<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>`;
+            alert = "success";
+            break;
+        default:
+            break;
     }
 
     alertDiv.className = "row justify-content-center";
@@ -90,7 +90,7 @@ function showAlert(message, type) {
         </div>
       `;
     form.insertBefore(alertDiv, elements.formDivButtons);
-    
+
     //cleanForm();
 
     setTimeout(() => {
@@ -101,7 +101,7 @@ function showAlert(message, type) {
 }
 
 function calculatePrice(amount, category) {
-    if (isNaN(amount) || isNaN(category) || amount < 1) {
+    if (!amount || !category || amount < 1) {
         return 0;
     }
     let totalPrice = amount * 200;
@@ -164,23 +164,50 @@ function updateCardSelected(category) {
 function validateForm() {
     const { formName, formLastName, formMail, formAmount } = elements;
 
-    const name =  formName.value.trim();
+    const name = formName.value.trim();
     const lastName = formLastName.value.trim();
     const mail = formMail.value.trim();
     const amount = parseInt(formAmount.value);
 
-    if (!name || !lastName || !mail || !amount) {
-        showAlert("Por favor, complete todos los campos del formulario.", 1);
+    console.log(amount);
+
+    if (!name || !lastName || !mail || isNaN(amount)) {
+        showAlert(
+            "Asegúrese de completar todos los campos del formulario y verificar su contenido, por favor.",
+            1
+        );
+        return;
+    }
+
+    if (!validateName(name)) {
+        showAlert(
+            "Asegúrese de que el nombre solo contenga letras y espacios, por favor.",
+            1
+        );
+        return;
+    }
+
+    if (!validateName(lastName)) {
+        showAlert(
+            "Asegúrese de que el apellido solo contenga letras y espacios, por favor.",
+            1
+        );
         return;
     }
 
     if (!validateEmail(mail)) {
-        showAlert("Por favor, ingrese una dirección de correo electrónico válida.", 1);
+        showAlert(
+            "Asegúrese de ingresar una dirección de correo electrónico válida, por favor.",
+            1
+        );
         return;
     }
 
     if (isNaN(amount) || amount < 1) {
-        showAlert("Por favor, ingrese una cantidad de tickets válida.", 1);
+        showAlert(
+            "Por favor, asegúrese de ingresar una cantidad válida de tickets.",
+            1
+        );
         return;
     }
 
@@ -203,10 +230,10 @@ function generateSummary() {
         modal,
     } = elements;
 
-    const name =  formName.value.trim();
+    const name = formName.value.trim();
     const lastName = formLastName.value.trim();
     const mail = formMail.value.trim();
-    
+
     const amount = parseInt(formAmount.value);
     const category = parseInt(formCategory.value);
     const totalPrice = calculatePrice(amount, category);
@@ -214,7 +241,7 @@ function generateSummary() {
     modalName.textContent = name;
     modalLastName.textContent = lastName;
     modalMail.textContent = mail;
-    modalMail.setAttribute('data-text', mail);
+    modalMail.setAttribute("data-text", mail);
     modalAmount.textContent = amount;
     modalCategory.textContent = getCategoryText(category);
     modalTotal.textContent = `$ ${totalPrice}`;
@@ -239,6 +266,11 @@ function getCategoryText(category) {
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+function validateName(name) {
+    const nameRegex = /^[a-zA-Z\s]*$/;
+    return nameRegex.test(name);
 }
 
 function cleanForm() {

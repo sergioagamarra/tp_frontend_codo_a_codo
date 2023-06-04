@@ -101,7 +101,7 @@ nav {
   content: attr(data-text);
   white-space: normal;
   position: absolute;
-  top: 40%;
+  top: 45%;
   right: 3%;
   background-color: #fff;
   padding: 5px;
