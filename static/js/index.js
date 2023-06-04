@@ -54,10 +54,11 @@ elements.formBtnSummary.addEventListener("click", validateForm);
 
 elements.formBtnDelete.addEventListener("click", cleanForm);
 
-elements.modalBtn.addEventListener("click", function () {
+elements.modalBtn.addEventListener("click", () => {
     let modal = bootstrap.Modal.getInstance(elements.modal);
     modal.hide();
     showAlert("Se ha completado la compra de tickects con éxito.", 2);
+    cleanForm()
 });
 
 function showAlert(message, type) {
@@ -90,7 +91,7 @@ function showAlert(message, type) {
       `;
     form.insertBefore(alertDiv, elements.formDivButtons);
     
-    cleanForm();
+    //cleanForm();
 
     setTimeout(() => {
         alertDiv.remove();
@@ -100,6 +101,9 @@ function showAlert(message, type) {
 }
 
 function calculatePrice(amount, category) {
+    if (isNaN(amount) || isNaN(category) || amount < 1) {
+        return 0;
+    }
     let totalPrice = amount * 200;
 
     switch (category) {
@@ -169,7 +173,13 @@ function validateForm() {
         showAlert("Por favor, complete todos los campos del formulario.", 1);
         return;
     }
-    if (amount < 1) {
+
+    if (!validateEmail(mail)) {
+        showAlert("Por favor, ingrese una dirección de correo electrónico válida.", 1);
+        return;
+    }
+
+    if (isNaN(amount) || amount < 1) {
         showAlert("Por favor, ingrese una cantidad de tickets válida.", 1);
         return;
     }
@@ -196,6 +206,7 @@ function generateSummary() {
     const name =  formName.value.trim();
     const lastName = formLastName.value.trim();
     const mail = formMail.value.trim();
+    
     const amount = parseInt(formAmount.value);
     const category = parseInt(formCategory.value);
     const totalPrice = calculatePrice(amount, category);
@@ -203,6 +214,7 @@ function generateSummary() {
     modalName.textContent = name;
     modalLastName.textContent = lastName;
     modalMail.textContent = mail;
+    modalMail.setAttribute('data-text', mail);
     modalAmount.textContent = amount;
     modalCategory.textContent = getCategoryText(category);
     modalTotal.textContent = `$ ${totalPrice}`;
@@ -222,6 +234,11 @@ function getCategoryText(category) {
         default:
             return "General";
     }
+}
+
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 function cleanForm() {

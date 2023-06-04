@@ -71,9 +71,9 @@
         <div class="container d-flex flex-wrap gap-1 justify-content-center">
           <div
             class="card border-primary mb-3 text-center"
-            style="max-width: 18rem"
+          
           >
-            <div class="card-body cursor-pointer" id="cardStudent">
+            <div class="card-body cursor-pointer shadow-lg" id="cardStudent">
               <h5 class="card-title">Estudiante</h5>
               <p class="card-text">Tiene un descuento</p>
               <h6 class="card-title">80%</h6>
@@ -83,10 +83,10 @@
             </div>
           </div>
           <div
-            class="card border-success mb-3 text-center"
-            style="max-width: 18rem"
+            class="card border-success mb-3 text-center shadow-lg"
+            
           >
-            <div class="card-body cursor-pointer" id="cardTrainee">
+            <div class="card-body cursor-pointer " id="cardTrainee">
               <h5 class="card-title">Trainee</h5>
               <p class="card-text">Tiene un descuento</p>
               <h6 class="card-title">50%</h6>
@@ -96,8 +96,8 @@
             </div>
           </div>
           <div
-            class="card border-warning mb-3 text-center"
-            style="max-width: 18rem"
+            class="card border-warning mb-3 text-center shadow-lg"
+      
           >
             <div class="card-body cursor-pointer" id="cardJunior">
               <h5 class="card-title">Junior</h5>
@@ -194,7 +194,7 @@
           <div class="row justify-content-center mb-5" id="formDivButtons">
             <div class="col-md-6 col-lg-3">
               <button
-                class="btn btn-success w-100 my-1"
+                class="btn btn-success w-100 my-1 shadow-lg mb-5"
                 type="button"
                 id="formBtnDelete"
               >
@@ -203,7 +203,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
               <button
-                class="btn btn-success w-100 my-1"
+                class="btn btn-success w-100 my-1 shadow-lg mb-5"
                 type="button"
                 id="formBtnSummary"
               >
@@ -253,21 +253,21 @@
       aria-labelledby="facturaModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered ">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header bg-dark text-white">
             <h5 class="modal-title" id="facturaModalLabel">
               Resumen de Compra
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
           <div class="modal-body px-5">
-            <div class="mb-4">
+            <div class="mb-1 mt-3">
               <h5 class="mb-3">Datos ingresados</h5>
               <div class="row">
                 <div class="col-6">
@@ -278,7 +278,7 @@
                 <div class="col-6">
                   <p id="modalName"></p>
                   <p id="modalLastName"></p>
-                  <p id="modalMail"></p>
+                  <p id="modalMail" data-text="" class="email-truncate"></p>
                 </div>
               </div>
               <hr />

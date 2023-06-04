@@ -88,17 +88,39 @@ nav {
   background-color: #ffc107;
   color: white;
   cursor:default;
-  animation: cardAnimation 1s infinite;  
+  
 }
 
-@keyframes cardAnimation {
+.email-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.email-truncate:hover::after {
+  content: attr(data-text);
+  white-space: normal;
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* @keyframes cardAnimation {
     0% {
       transform: scale(1);
+      
     }
     50% {
       transform: scale(1.01);
+      border-radius: 5px;
     }
     100% {
       transform: scale(1);
+     
     }
-  }
+  } */
